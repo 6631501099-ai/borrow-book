@@ -6,7 +6,11 @@ import 'package:flutter_application_1/main.dart'; // Import the global 'supabase
 // Add imports for all your pages
 import 'package:flutter_application_1/student_main_page.dart'; // <-- For students
 import 'package:flutter_application_1/lender_main_page.dart';
+<<<<<<< HEAD
 import 'package:flutter_application_1/signup.dart'; 
+=======
+import 'package:flutter_application_1/signup.dart';
+>>>>>>> 990da82707506c0533ff2e0fc7d8b01f39620d63
 import 'package:flutter_application_1/staff_main_page.dart';
 // --- END OF FIX ---
 
@@ -22,7 +26,11 @@ class _LoginPageState extends State<LoginPage> {
   final _passwordController = TextEditingController();
 
   bool _isLoading = false;
+<<<<<<< HEAD
   bool _isPasswordObscured = true; 
+=======
+  bool _isPasswordObscured = true;
+>>>>>>> 990da82707506c0533ff2e0fc7d8b01f39620d63
 
   Future<void> _signInAndNavigate() async {
     setState(() {
@@ -35,7 +43,11 @@ class _LoginPageState extends State<LoginPage> {
         email: _emailController.text.trim(),
         password: _passwordController.text.trim(),
       );
+<<<<<<< HEAD
       
+=======
+
+>>>>>>> 990da82707506c0533ff2e0fc7d8b01f39620d63
       final userId = authResponse.user?.id;
       if (userId == null) {
         throw Exception('Login successful, but no user ID found.');
@@ -47,7 +59,11 @@ class _LoginPageState extends State<LoginPage> {
           .select('role')
           .eq('id', userId)
           .single();
+<<<<<<< HEAD
       
+=======
+
+>>>>>>> 990da82707506c0533ff2e0fc7d8b01f39620d63
       final role = userProfile['role'];
 
       // 3. Navigate based on the role
@@ -57,14 +73,22 @@ class _LoginPageState extends State<LoginPage> {
           case 'student':
             Navigator.of(context).pushReplacement(
               // Go to the main page with the nav bar
+<<<<<<< HEAD
               MaterialPageRoute(builder: (context) => const StudentMainPage()), 
+=======
+              MaterialPageRoute(builder: (context) => const StudentMainPage()),
+>>>>>>> 990da82707506c0533ff2e0fc7d8b01f39620d63
             );
             break;
           // --- END OF FIX ---
           case 'lender':
             Navigator.of(context).pushReplacement(
               // CORRECT: This page has the Scaffold
+<<<<<<< HEAD
               MaterialPageRoute(builder: (context) => const LenderMainPage()), 
+=======
+              MaterialPageRoute(builder: (context) => const LenderMainPage()),
+>>>>>>> 990da82707506c0533ff2e0fc7d8b01f39620d63
             );
             break;
           case 'staff':
@@ -76,7 +100,10 @@ class _LoginPageState extends State<LoginPage> {
             _showErrorDialog('Unknown role: $role');
         }
       }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 990da82707506c0533ff2e0fc7d8b01f39620d63
     } catch (error) {
       _showErrorDialog('Login failed: ${error.toString()}');
     }
@@ -129,7 +156,11 @@ class _LoginPageState extends State<LoginPage> {
 
               TextField(
                 controller: _passwordController,
+<<<<<<< HEAD
                 obscureText: _isPasswordObscured, 
+=======
+                obscureText: _isPasswordObscured,
+>>>>>>> 990da82707506c0533ff2e0fc7d8b01f39620d63
                 decoration: InputDecoration(
                   labelText: 'Password',
                   suffixIcon: IconButton(
@@ -157,7 +188,11 @@ class _LoginPageState extends State<LoginPage> {
                     ? const CircularProgressIndicator()
                     : const Text('Log in'),
               ),
+<<<<<<< HEAD
               
+=======
+
+>>>>>>> 990da82707506c0533ff2e0fc7d8b01f39620d63
               TextButton(
                 onPressed: () {
                   Navigator.of(context).push(
@@ -172,4 +207,8 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 990da82707506c0533ff2e0fc7d8b01f39620d63
